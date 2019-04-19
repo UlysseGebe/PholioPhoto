@@ -1,6 +1,7 @@
 body
 {
     background: #dddddd;
+    overflow: hidden;
 }
 
 .hetic-carousel
