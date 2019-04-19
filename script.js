@@ -24,13 +24,15 @@ const key = () => {
 const check = () => {
     let keyResult = event.key
     let sibling = document.querySelectorAll('.sibling')
-    for (let i = 0; i < sibling.length; i++) {
-        if (document.fullscreenElement == null ) {
-            sibling[i].style.display = 'none'
-            screen.style.cursor = 'none'
-        } else {
-            sibling[i].style.display = 'flex'
-            screen.style.cursor = 'initial'
+    if (keyResult == 'f') {
+        for (let i = 0; i < sibling.length; i++) {
+            if (document.fullscreenElement == null ) {
+                sibling[i].style.display = 'none'
+                screen.style.cursor = 'none'
+            } else {
+                sibling[i].style.display = 'flex'
+                screen.style.cursor = 'initial'
+            }
         }
     }
 }
