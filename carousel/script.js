@@ -45,12 +45,12 @@ class HeticCarousel {
     }
 
     keyEvent() {
-        window.addEventListener('keypress', () => {
-            let keyResult = event.charCode
-            if (keyResult == 113) {
+        window.addEventListener('keydown', () => {
+            let keyResult = event.key
+            if (keyResult == 'ArrowLeft' | keyResult == 'q') {
                 this.previous()
             }
-            if (keyResult == 100) {
+            if (keyResult == 'ArrowRight' | keyResult == 'd') {
                 this.next()
             }
         })
