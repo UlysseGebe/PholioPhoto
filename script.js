@@ -9,8 +9,8 @@ for (let i = 0; i < $image.length; i++) {
     $image[i].style.backgroundImage = `url("image/image_0${i+1}.jpg")`
 }
 
+let screen = document.querySelector('.js-carousel')
 const key = () => {
-    let screen = document.querySelector('.js-carousel')
     let keyResult = event.charCode
     if (keyResult == 102) {
         if (document.fullscreenElement == null) {
@@ -22,15 +22,18 @@ const key = () => {
 }
 
 const check = () => {
+    let keyResult = event.key
     let sibling = document.querySelectorAll('.sibling')
     for (let i = 0; i < sibling.length; i++) {
-        if (document.fullscreenElement == null) {
+        if (document.fullscreenElement == null ) {
             sibling[i].style.display = 'none'
+            screen.style.cursor = 'none'
         } else {
             sibling[i].style.display = 'flex'
+            screen.style.cursor = 'initial'
         }
     }
 }
 
 window.addEventListener('keypress', key)
-window.addEventListener('keypress', check)
+window.addEventListener('keydown', check)
