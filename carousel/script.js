@@ -5,6 +5,7 @@ class HeticCarousel {
         this.setSiblings()
         this.setAuto()
         this.setPagination()
+        this.keyEvent()
 
         this.goTo(0)
     }
@@ -40,6 +41,18 @@ class HeticCarousel {
 
         this.siblings.$next.addEventListener('click', () => {
             this.next()
+        })
+    }
+
+    keyEvent() {
+        window.addEventListener('keypress', () => {
+            let keyResult = event.charCode
+            if (keyResult == 113) {
+                this.previous()
+            }
+            if (keyResult == 100) {
+                this.next()
+            }
         })
     }
 
